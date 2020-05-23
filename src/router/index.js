@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '../components/login.vue' // 引入login组件
 import Home from '../components/home.vue'
+import Welcome from '../components/welcome.vue' // 子路由方式 存在 home中
+import Users from '../components/user/users.vue'
 
 Vue.use(Router)
 
@@ -10,7 +12,13 @@ const router = new Router({
   routes: [
     {path: "/",redirect: '/login' },//..做一个重定向
     {path: "/login",component: Login},
-    { path:'/home',component: Home}
+    { path:'/home',
+    component: Home , 
+    redirect: '/welcome',
+    children: [ 
+      {path: '/welcome' , component: Welcome},
+      {path: '/userList' , component: Users}
+    ]}
   ]
 })
 

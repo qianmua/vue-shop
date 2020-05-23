@@ -17,6 +17,16 @@ Vue.prototype.$http = axios
 //设置访问root
 axios.defaults.baseURL = "http://localhost:9090"
 
+//添加 菜单api权限令牌
+axios.interceptors.request.use(config => {
+  console.log(config)
+  //颁发令牌
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+
+  //must
+  return config
+}) 
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);

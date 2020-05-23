@@ -63,7 +63,7 @@ export default {
             //异步请求
             this.$refs.formLogin.validate(async valid => {
                 console.log(valid)
-                // if(!valid) return ;
+                if(!valid) return ;
                 //异步解析
                 // const {data:res} = await this.$http.get('success');
                 // console.log(res);
