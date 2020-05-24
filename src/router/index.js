@@ -4,6 +4,8 @@ import Login from '../components/login.vue' // 引入login组件
 import Home from '../components/home.vue'
 import Welcome from '../components/welcome.vue' // 子路由方式 存在 home中
 import Users from '../components/user/users.vue'
+import Rights from '../components/power/rights.vue'
+import UserAuth from '../components/power/userAuth.vue'
 
 Vue.use(Router)
 
@@ -17,7 +19,9 @@ const router = new Router({
     redirect: '/welcome',
     children: [ 
       {path: '/welcome' , component: Welcome},
-      {path: '/userList' , component: Users}
+      {path: '/userList' , component: Users},
+      {path: '/authList' , component: Rights},
+      {path: '/roteList' , component: UserAuth}
     ]}
   ]
 })

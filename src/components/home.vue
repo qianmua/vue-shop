@@ -92,7 +92,7 @@ export default {
                     children: [
                         {authName: '角色列表',id:227 , order: 1 , path: "roteList"} ,
                         {authName: '权限列表',id:228 , order: 1 , path: "authList"},
-                        {authName: '信息',id:229 , order: 1 , path: "roteList"}
+                        {authName: '信息',id:229 , order: 1 , path: "roteInfo"}
                     ],
                     id: 126,
                     order: 1,
