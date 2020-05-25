@@ -1,6 +1,5 @@
 <template>
     <div>
-        角色列表
         <!-- 面包屑 导航 -->
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item :to="{ path: '/welcome' }">首页</el-breadcrumb-item>

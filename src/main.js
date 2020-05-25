@@ -10,6 +10,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import './assets/css/style.css'
 //导入axios
 import axios from 'axios'
+// 导入 ZTree
+import ZKTree from 'vue-table-with-tree-grid'
 
 //挂载axios
 Vue.prototype.$http = axios
@@ -30,6 +32,7 @@ axios.interceptors.request.use(config => {
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+Vue.use(ZKTree);
 
 /* eslint-disable no-new */
 new Vue({

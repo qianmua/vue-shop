@@ -6,6 +6,7 @@ import Welcome from '../components/welcome.vue' // 子路由方式 存在 home�
 import Users from '../components/user/users.vue'
 import Rights from '../components/power/rights.vue'
 import UserAuth from '../components/power/userAuth.vue'
+import ShopClass from '../components/goods/shopClass.vue'
 
 Vue.use(Router)
 
@@ -21,7 +22,8 @@ const router = new Router({
       {path: '/welcome' , component: Welcome},
       {path: '/userList' , component: Users},
       {path: '/authList' , component: Rights},
-      {path: '/roteList' , component: UserAuth}
+      {path: '/roteList' , component: UserAuth},
+      {path: '/shopClass' , component: ShopClass}
     ]}
   ]
 })
