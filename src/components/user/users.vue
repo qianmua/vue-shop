@@ -185,6 +185,37 @@
                 <el-button type="primary" @click="editUserVisible = false">确 定</el-button>
             </span>
         </el-dialog>
+
+        <!-- 角色分配 -->
+        <el-dialog
+            title="角色分配"
+            :visible.sync="setUserRoteVisible"
+            width="50%"
+            @close="closeDialogRote">
+            <!-- body -->
+            <div>
+                <p>当前用户:{{roteListInfo.username}}</p>
+                <p>当前角色:{{roteListInfo.rotename}}</p>
+                <p>分配新角色:
+                    <el-select v-model="selectRoteId" placeholder="请选择">
+                        <el-option
+                            v-for="item in roteListAll"
+                            :key="item.id"
+                            :label="item.rolename"
+                            :value="item.id">
+                        </el-option>
+                    </el-select>
+                </p>
+            </div>
+           
+            <!-- footer -->
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="setUserRoteVisible = false">取 消</el-button>
+                <el-button type="primary" @click="changeUserRoteTure">确 定</el-button>
+            </span>
+        </el-dialog>
+
+
     </div>
 </template>
 
@@ -257,6 +288,19 @@ export default {
             editUserVisible :false,
             // 查询得到的用户信息
             editUserFrom: {},
+            // 控制角色分配
+            setUserRoteVisible: false,
+            // 角色 列表
+            roteListInfo: { username:'aaa' , rotename: 'bbbb'},
+            // 所有角色信息列表
+            roteListAll: [
+                {id:101 , rolename: '管理一'},
+                {id:102 , rolename: '管理er'},
+                {id:103 , rolename: '管理san'},
+                {id:104 , rolename: '管理si'},
+            ],
+            // 已 选中的 值
+            selectRoteId: '',
             // 修改 表单验证
             editUserRote: {
                 email: [
@@ -414,8 +458,18 @@ export default {
 
         },
         changeUser(id){
-
-        }
+            this.setUserRoteVisible = true;
+        },
+        // 修改用户权限 角色
+        changeUserRoteTure(){
+            this.setUserRoteVisible = false
+            this.$message.success("success")
+        },
+        // 关闭 角色 选择 对话框
+        // 重置 value
+        closeDialogRote(){
+            this.selectRoteId = ''            
+        },
     },
     
     
