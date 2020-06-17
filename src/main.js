@@ -11,7 +11,8 @@ import './assets/css/style.css'
 //导入axios
 import axios from 'axios'
 // 导入 ZTree
-import ZKTree from 'vue-table-with-tree-grid'
+import ZkTable from './vue-table-with-tree-grid'
+
 
 //挂载axios
 Vue.prototype.$http = axios
@@ -32,7 +33,8 @@ axios.interceptors.request.use(config => {
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
-Vue.use(ZKTree);
+Vue.use(ZkTable);
+
 
 /* eslint-disable no-new */
 new Vue({
